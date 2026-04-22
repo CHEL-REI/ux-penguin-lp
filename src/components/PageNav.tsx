@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 import { useLocale } from '../i18n/useLocale';
 import { LOCALES, type Locale } from '../i18n/dict';
@@ -105,9 +106,10 @@ export default function PageNav() {
         </div>
       </nav>
 
-      {/* Mobile menu overlay */}
+      {/* Portal to body — escapes Hero's z-30 stacking context so overlay sits above MobileStickyCTA. */}
+      {createPortal(
       <div
-        className={`md:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
+        className={`md:hidden fixed inset-0 z-50 transition-opacity duration-300 ${
           open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
@@ -174,7 +176,9 @@ export default function PageNav() {
             </div>
           </div>
         </div>
-      </div>
+      </div>,
+      document.body,
+      )}
     </>
   );
 }
