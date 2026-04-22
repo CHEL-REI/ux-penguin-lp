@@ -190,24 +190,24 @@ export default function Hero() {
         </div>
 
         <div
-          className="mt-16 md:mt-20 grid lg:grid-cols-[200px_1fr_220px] gap-10 lg:gap-12 items-end"
+          className="mt-16 md:mt-20 grid grid-cols-1 lg:grid-cols-[200px_minmax(0,1fr)_220px] gap-10 lg:gap-12 items-end"
           style={{
             opacity: revealed ? 1 : 0,
             transform: revealed ? 'none' : 'translateY(24px)',
             transition: 'opacity 0.8s ease 2.0s, transform 0.8s cubic-bezier(0.2,0.7,0.2,1) 2.0s',
           }}
         >
-          <div className="flex flex-row justify-around lg:flex-col lg:justify-end gap-6 lg:gap-10 order-3 lg:order-1 lg:pb-8">
+          <div className="grid grid-cols-3 lg:flex lg:flex-col lg:justify-end gap-4 lg:gap-10 order-3 lg:order-1 lg:pb-8 min-w-0">
             {t.hero.stats.map((s) => (
               <Stat key={s.label} n={s.n} label={s.label} />
             ))}
           </div>
 
-          <div className="order-1 lg:order-2 flex justify-center relative">
+          <div className="order-1 lg:order-2 flex justify-center relative min-w-0">
             <MonitorMock className="w-full max-w-[560px] lg:max-w-[640px]" />
           </div>
 
-          <div className="order-2 lg:order-3 flex justify-center lg:justify-start lg:items-end">
+          <div className="order-2 lg:order-3 flex justify-center lg:justify-start lg:items-end min-w-0">
             <img
               src="/mascot.svg"
               alt="ux penguin mascot"
