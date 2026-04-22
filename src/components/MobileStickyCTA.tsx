@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useLocale } from '../i18n/useLocale';
 
 export default function MobileStickyCTA() {
-  const { t, localePath } = useLocale();
+  const { t } = useLocale();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -24,12 +23,12 @@ export default function MobileStickyCTA() {
           transform: visible ? 'none' : 'translateY(16px)',
         }}
       >
-        <Link
-          to={localePath('/') + '#pricing'}
+        <a
+          href="https://ux-penguin.ai/login"
           className="pointer-events-auto flex items-center justify-center bg-black text-white text-base font-medium rounded-full px-6 py-4 shadow-[0_10px_30px_rgba(0,0,0,0.25)] active:scale-[0.98] transition-transform"
         >
           {t.nav.getStarted}
-        </Link>
+        </a>
       </div>
     </div>
   );

@@ -70,12 +70,12 @@ export default function PageNav() {
               </span>
             ))}
           </div>
-          <Link
-            to={localePath('/') + '#pricing'}
+          <a
+            href="https://ux-penguin.ai/login"
             className="hidden md:inline-flex bg-black text-white text-sm font-normal rounded-full px-6 py-3 hover:bg-neutral-800 transition-colors"
           >
             {t.nav.getStarted}
-          </Link>
+          </a>
 
           <button
             type="button"
@@ -147,13 +147,6 @@ export default function PageNav() {
                 {l.label}
               </Link>
             ))}
-            <Link
-              to={localePath('/') + '#pricing'}
-              onClick={() => setOpen(false)}
-              className="mt-6 bg-black text-white text-base rounded-full px-6 py-3.5 text-center hover:bg-neutral-800 transition-colors"
-            >
-              {t.nav.getStarted}
-            </Link>
           </nav>
 
           <div className="px-6 py-6 border-t border-black/10">
