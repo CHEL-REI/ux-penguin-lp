@@ -19,7 +19,7 @@ function Stat({ n, label }: { n: string; label: string }) {
 
 type FlowerPlan = {
   variant: 'red' | 'amber' | 'gold';
-  shape?: 'flower' | 'block';
+  shape?: 'cross' | 'block';
   size: number;
   rotate: number;
   withStem?: boolean;
@@ -178,13 +178,14 @@ export default function Hero() {
               transition: 'opacity 0.7s ease 1.7s, transform 0.7s cubic-bezier(0.2,0.7,0.2,1) 1.7s',
             }}
           >
-            {t.hero.desc.map((seg, i) =>
-              seg.bold ? (
+            {t.hero.desc.map((seg, i) => {
+              const bold = 'bold' in seg && seg.bold;
+              return bold ? (
                 <strong key={i} className="font-semibold text-black">{seg.text}</strong>
               ) : (
                 <span key={i}>{seg.text}</span>
-              )
-            )}
+              );
+            })}
           </p>
         </div>
 
