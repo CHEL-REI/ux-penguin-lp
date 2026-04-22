@@ -9,6 +9,7 @@ import EnterpriseCallout from '../components/EnterpriseCallout';
 import FinalCTA from '../components/FinalCTA';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
+import MobileStickyCTA from '../components/MobileStickyCTA';
 import { useLocale } from '../i18n/useLocale';
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
       <FinalCTA />
       <FAQ />
       <Footer />
+      <MobileStickyCTA />
     </div>
   );
 }

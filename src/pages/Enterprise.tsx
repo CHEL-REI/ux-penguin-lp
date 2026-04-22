@@ -7,6 +7,7 @@ import PricingEnterprise from '../components/PricingEnterprise';
 import ContactCTA from '../components/ContactCTA';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
+import MobileStickyCTA from '../components/MobileStickyCTA';
 import { useLocale } from '../i18n/useLocale';
 
 export default function Enterprise() {
@@ -22,6 +23,7 @@ export default function Enterprise() {
       <ContactCTA />
       <FAQ />
       <Footer />
+      <MobileStickyCTA />
     </div>
   );
 }
